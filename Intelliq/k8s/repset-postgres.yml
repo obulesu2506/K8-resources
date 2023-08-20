@@ -1,0 +1,30 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: posql-repcon
+  labels:
+    author: kumar
+    type: postgres
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      type: postgres
+  template:
+    metadata:
+      name: posql-pod
+      labels:
+        type: postgres
+    spec:
+      containers:
+        - name: mypostgres
+          image: postgres
+          env:
+            - name: POSTGRES_PASSWORD
+              value: intelliqit
+            - name: POSTGRES_USER
+              value: myuser
+            - name: POSTGRES_DB
+              value: mydb
+...

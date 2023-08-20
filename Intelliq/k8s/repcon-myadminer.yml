@@ -1,0 +1,23 @@
+---
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: adminer-repcon
+  labels:
+    author: kumar
+    type: appserver
+spec:
+  replicas: 2
+  template:
+    metadata:
+      name: adminer-pod
+      labels:
+        type: appserver
+    spec:
+      containers:
+        - name: myadminer
+          image: adminer
+          ports:
+            - containerPort: 8080
+              hostPort: 8080
+...

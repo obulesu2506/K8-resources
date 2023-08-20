@@ -1,0 +1,30 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres-deployment
+  labels:
+    author: kumar
+    type: postgresdb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      type: postgresdb
+  template:
+    metadata:
+      name: postgres-pod
+      labels:
+        type: postgresdb
+    spec:
+      containers:
+        - name: postgres-pod
+          image: postgres
+          env:
+            - name: POSTGRES_PASSWORD
+              value: intelliqit
+            - name: POSTGRES_USER
+              value: myuser
+            - name: POSTGRES_DB
+              value: mydb
+...

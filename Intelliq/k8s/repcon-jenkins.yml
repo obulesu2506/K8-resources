@@ -1,0 +1,23 @@
+---
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: jenkins-repcon
+  labels:
+    author: kumar
+    type: ci-cd
+spec:
+  replicas: 2
+  template:
+    metadata:
+      name: jenkins-pod
+      labels:
+        type: ci-cd
+    spec:
+      containers:
+        - name: myjenkins
+          image: jenkins/jenkins
+          ports:
+            - containerPort: 8080
+              hostPort: 8080
+...

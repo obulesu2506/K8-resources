@@ -1,0 +1,17 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tomcat-prod
+  namespace: mynspace
+  labels:
+    author: kumar
+    type: appserver
+spec:
+  containers:
+    - name: mytomcat
+      image: tomee
+      ports:
+        - containerPort: 8080
+          hostPort: 9090
+...

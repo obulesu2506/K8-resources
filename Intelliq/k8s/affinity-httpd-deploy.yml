@@ -1,0 +1,34 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: httpd-affinity
+  labels:
+    type: webserver
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      type: proxy
+  template:
+    metadata:
+      name: httpd-pod
+      labels:
+        type: proxy
+    spec:
+      containers:
+        - name: httpd-pod
+          image: httpd
+          ports:
+            - containerPort: 80
+              hostPort: 9090
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                 - key: slave1
+                   operator: In
+                   values:
+                     - intelliqit1
+...

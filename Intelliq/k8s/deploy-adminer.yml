@@ -1,0 +1,26 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: adminer-deploy
+  labels:
+    author: kumar
+    type: appserver
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      type: appserver
+  template:
+    metadata:
+      name: adminer-pod
+      labels:
+        type: appserver
+    spec:
+      containers:
+        - name: myadminer
+          image: adminer
+          ports:
+            - containerPort: 8080
+              hostPort: 8080
+...

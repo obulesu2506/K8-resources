@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: httpd-deployment
+  labels:
+    author: kumar
+    type: servport
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      type: servport
+  template:
+    metadata:
+      name: httpd-pod
+      labels:
+        type: servport
+    spec:
+      containers:
+        - name: myhttpd
+          image: httpd
+...

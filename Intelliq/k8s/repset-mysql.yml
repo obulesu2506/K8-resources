@@ -1,0 +1,26 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: mysql-repcon
+  labels:
+    author: kumar
+    type: mysqldb
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      type: mysqldb
+  template:
+    metadata:
+      name: mysql-pod
+      labels:
+        type: mysqldb
+    spec:
+      containers:
+        - name: mysql
+          image: mysql:5
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: intelliqit
+...

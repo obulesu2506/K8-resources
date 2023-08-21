@@ -19,4 +19,20 @@ spec:
           name: course-config
           key: duration
 
+#alternate method
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: config-pod
+  labels:
+    author: kumar
+    type: valureference
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    envFrom:
+      - configMapRef:
+          name: course-config
 ...

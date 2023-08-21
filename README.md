@@ -1,5 +1,7 @@
 Kubernetes Resources
 
+K8S evolved as docker can't manage the clusers with heavy load and lack of self-healing, distirbution of requests traffic load & scaling.
+
 Kubernetes resources are created using with YAML files. Basi Syntax is 
 
 ```

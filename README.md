@@ -36,7 +36,7 @@ To get pods & node details together
 kubectl get pods ; kubectl get nodes
 ```
 
-To login into container then
+To login into specific container then
 ```
 kubectl exec -it <metadata-name> -c <container-name> -- bash
 ```

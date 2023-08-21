@@ -1,0 +1,11 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: course-config
+  labels:
+    author: kumar
+data:
+  course: k8s
+  duration: 25hr
+...

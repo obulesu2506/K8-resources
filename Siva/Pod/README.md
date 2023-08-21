@@ -27,7 +27,18 @@ watch kubectl get pods
 ```
 7) If we mention image version which is not mentioned in the docker hub then K8S will create POD with "ErrImagePull" status.
    If we define two images i.e., one is valid image and another one with valid image but not mentioning any ports then, 
-   status of one container is running and another one is "CrashLoopRange" error will get.
+   status of one container is running and another one is "CrashLoopBackoff" error will get.
 
-8) 
+8) Labels are the key/value pairs that are attached for the objects such as Pod
+```
+Note: Valid label value:
+
+must be 63 characters or less (can be empty),
+unless empty, must begin and end with an alphanumeric character ([a-z0-9A-Z]),
+could contain dashes (-), underscores (_), dots (.), and alphanumerics between. 
+```
+Annotations are similar to labels i.e., key/value pairs for the objects but accepts more digits (upto 253 alph-anumeric, dots, underscores, hipens etc)
+
+9) environment variables can be declared using "env" in the form of key-value pairs
+
 

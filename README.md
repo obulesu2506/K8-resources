@@ -43,3 +43,12 @@ To login into specific container then
 kubectl exec -it <metadata-name> -c <container-name> -- bash
 ```
 Note: Number of containers created as part of single Pod then those containers can be access together and having single/same IP address
+
+We can use alias for the frequent used commands i.e.,
+
+```
+alias ka='kubectl apply -f'
+alias kd='kubectl delete -f'
+alias kds='kubectl describe pod'
+
+```

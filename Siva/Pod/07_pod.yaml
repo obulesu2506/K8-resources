@@ -1,0 +1,26 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx:hdjdh
+    ports:
+      - containerPort: 80
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx_almalinux
+spec:
+  containers:
+  - name: nginxSW
+    image: nginx
+    ports:
+      - containerPort: 80
+  - name: almalinux
+    image: almalinux
+...

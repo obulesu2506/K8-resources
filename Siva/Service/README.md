@@ -15,3 +15,19 @@ To get number of services in a cluster:
 ```
 kubectl get svc
 ```
+
+NodePort:
+NodePort provide facility to the webuser to access nodes over a network using same IP for connecting different nodes(servers)
+
+user: NODE1:<NODE-PORT> --> ClusterIP --> Container
+      NODE2:<NODE-PORT> --> ClusterIP --> Container
+
+LoadBalancer:
+This is used to access different nodes via LB IP
+
+LB --> ELB --> connecting to any of the instances --> Pod
+
+```
+ClusterIP is subset of NodePort
+NodePort is subset of LoadBalancer
+```

@@ -9,3 +9,9 @@ Three Different Types of services:
 1) Node Port  - 
 2) Load Balancer - distributing traffic to different nodes
 3) Cluster IP  - Communicate between Pod to Pod
+
+To get number of services in a cluster:
+
+```
+kubectl get svc
+```

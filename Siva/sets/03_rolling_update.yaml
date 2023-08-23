@@ -1,0 +1,34 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  annotations:
+    deployment.kubernetes.io/change-cause: "Upgraded to version 2.0"
+  labels:
+    author: kumar
+    type: webserver
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      type: webserver
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 2 # we ask for 10 and we are okay if 8 are running at the time of upgrade
+      maxSurge: 2 # we sk for 10 and we are okay ta the time of upgrade 12 running
+  template:
+    metadata:
+      labels:
+        type: webserver
+    spec:
+      containers:
+      - name: nginx
+        image: nginx: 1.22.1
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 80
+# Check status for the deployment
+# kubectl rollout status deployment/nginx-deployment
+...

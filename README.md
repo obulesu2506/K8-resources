@@ -47,8 +47,10 @@ Note: Number of containers created as part of single Pod then those containers c
 We can use alias for the frequent used commands i.e.,
 
 ```
-alias ka='kubectl apply -f'
-alias kd='kubectl delete -f'
-alias kds='kubectl describe pod'
+alias a='kubectl apply -f'
+alias d='kubectl delete -f'
+alias ds='kubectl describe pod'
+alias w='watch kubectl get pods'
+alias gp='git pull'
 
 ```

@@ -40,7 +40,9 @@ kubectl get pods ; kubectl get nodes
 
 To login into specific container then
 ```
-kubectl exec -it <metadata-name> -c <container-name> -- bash
+kubectl exec -it <metadata-name> -c <container-name> -- bash # for non OS containers
+
+kubectl exec -it <metadata-name> -c <container-name> -- sh #for OS containers
 ```
 Note: Number of containers created as part of single Pod then those containers can be access together and having single/same IP address
 

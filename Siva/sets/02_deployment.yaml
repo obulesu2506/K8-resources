@@ -6,7 +6,7 @@ metadata:
   labels:
     server: proxy
 spec:
-  replicas: 6
+  replicas: 8
   selector:
     matchLabels:
       server: proxy
@@ -21,10 +21,10 @@ spec:
         resources:
           requests:
             cpu: "0.3" # 1 CPU = 1000 m
-            memory: "500Mi"
+            memory: "1"
           limits:
-            cpu: "0.5"
-            memory: "500Mi"
+            cpu: "0.4"
+            memory: "1500"
 ---
 apiVersion: v1
 kind: Service

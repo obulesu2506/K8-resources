@@ -20,11 +20,11 @@ spec:
         image: nginx:1.14.2
         resources:
           requests:
-            cpu: "500m" # 1 CPU = 1000 m
-            memory: "1"
+            cpu: "0.3" # 1 CPU = 1000 m
+            memory: "500Mi"
           limits:
-            cpu: "1"
-            memory: "1500"
+            cpu: "0.5"
+            memory: "500Mi"
 ---
 apiVersion: v1
 kind: Service

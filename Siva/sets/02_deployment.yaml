@@ -6,7 +6,7 @@ metadata:
   labels:
     server: proxy
 spec:
-  replicas: 2
+  replicas: 6
   selector:
     matchLabels:
       server: proxy

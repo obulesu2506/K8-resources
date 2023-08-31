@@ -3,7 +3,7 @@ Volumes inside K8S :
 1) emptyDir
 2) hostPath
 
-EmptyDir (Empty directory) is a volume storage hub which will store data of all the containers inside the node and then this data will be moved to outside node (i.e., ELS) using  sidecars
+EmptyDir (Empty directory) is a volume storage hub which will store data of all the containers inside the node and then this data will be moved to outside node (i.e., ELS) using  sidecars.
 
 Mounting config maps as volumes:
 --------------------------------
@@ -41,4 +41,4 @@ RO  --> only for reading the data
 
 EBS Static Provisioning:
 ----------------------------
-If EC2 is one region, then corresponding EBS should be in that same region
+If EC2 is one region, then corresponding EBS should be in that same region (Similar to hard disk to your computer)

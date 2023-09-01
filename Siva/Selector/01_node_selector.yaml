@@ -10,7 +10,7 @@ spec:
   selector:
     matchLabels:
       app: proxy
-      name: nginx-service
+  serviceName: nginx-service
   template:
     metadata:
       name: nginx-pod
@@ -21,7 +21,6 @@ spec:
       containers:
       - name: nginx
         image: nginx
-
       nodeSelector:
         tier: web
 ---
@@ -30,7 +29,7 @@ kind: Service
 metadata:
   name: nginx-service
 spec:
-  type: nodePort
+  type: NodePort
   selector:
     app: proxy
   ports:

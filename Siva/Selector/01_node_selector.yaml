@@ -33,8 +33,7 @@ spec:
   selector:
     app: proxy
   ports:
-    - protocol: TCP
+    - targetPort: 8080
       port: 80
-      targetPort: 8080
       nodePort: 32761
 ...

@@ -11,14 +11,14 @@ spec:
         preference:
           matchExpressions:
           - key: tier
-            operator: In
+            operator: NotIn
             values:
             - web
       - weight: 50
         preference:
           matchExpressions:
           - key: tier
-            operator: In
+            operator: NotIn
             values:
             - web
   containers:

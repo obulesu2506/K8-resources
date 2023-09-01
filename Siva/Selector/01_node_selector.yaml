@@ -10,7 +10,7 @@ spec:
   selector:
     matchLabels:
       app: proxy
-      name: nginx-service
+      #name: nginx-service
   template:
     metadata:
       name: nginx-pod

@@ -11,7 +11,7 @@ spec:
         preference:
           matchExpressions:
           - key: tier
-            operator: NotIn
+            operator: In
             values:
             - web
       - weight: 50

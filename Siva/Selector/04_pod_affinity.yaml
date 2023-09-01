@@ -16,17 +16,16 @@ metadata:
   name: cart
 spec:
   affinity:
-    nodeAffinity:
+    podAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
-      - nodeSelector:
-        matchExpressions:
-        - key: name
-          operator: In
-          values:
-          - catalogue
+      - labelSelector:
+          matchExpressions:
+          - key: name
+            operator: In
+            values:
+            - catalogue
         topologyKey: topology.kubernetes.io/zone
   containers:
   - name: nginx
     image: nginx
-      
 ...

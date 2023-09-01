@@ -1,15 +1,41 @@
 ---
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: nginx
   labels:
     env: test
 spec:
-  containers:
-  - name: nginx
-    image: nginx
-  nodeSelector:
-    tier: web
-      
+  replicas: 4
+  selector:
+    matchLabels:
+      app: proxy
+      name: nginx-service
+  template:
+    metadata:
+      name: nginx-pod
+      labels:
+        app: proxy
+        name: nginx-service
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+
+      nodeSelector:
+        tier: web
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+spec:
+  type: nodePort
+  selector:
+    app: proxy
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+      nodePort: 32761
 ...

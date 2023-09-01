@@ -18,7 +18,7 @@ spec:
         preference:
           matchExpressions:
           - key: tier
-            operator: In
+            operator: NotIn
             values:
             - web
   containers:

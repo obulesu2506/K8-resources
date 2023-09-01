@@ -20,11 +20,11 @@ spec:
     podAntiAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
       - labelSelector:
-        matchExpressions:
-        - key: name
-          operator: In
-          values:
-          - catalogue
+          matchExpressions:
+          - key: name
+            operator: In
+            values:
+            - catalogue
         topologyKey: topology.kubernetes.io/zone
   containers:
   - name: nginx
